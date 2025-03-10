@@ -58,6 +58,7 @@ class WordPressSource {
 
     for (const type in data) {
       const options = data[type]
+      if (!options?.rest_base) continue;
 
       this.restBases.posts[type] = trimStart(options.rest_base, '/')
 
